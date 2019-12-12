@@ -33,27 +33,27 @@ open class MigrateTask : DefaultTask() {
             }
 
             override fun visitGradleCoordinate(
-                    oldGroupName: String,
-                    oldArtifactName: String,
-                    newGroupName: String,
-                    newArtifactName: String,
-                    newBaseVersion: String
+                oldGroupName: String,
+                oldArtifactName: String,
+                newGroupName: String,
+                newArtifactName: String,
+                newBaseVersion: String
             ) {
                 gradleDependencyEntries.add(
-                        GradleDependencyMigrationEntry(
-                                oldGroupName,
-                                oldArtifactName,
-                                newGroupName,
-                                newArtifactName,
-                                newBaseVersion
-                        )
+                    GradleDependencyMigrationEntry(
+                        oldGroupName,
+                        oldArtifactName,
+                        newGroupName,
+                        newArtifactName,
+                        newBaseVersion
+                    )
                 )
             }
 
             override fun visitGradleCoordinateUpgrade(
-                    groupName: String,
-                    artifactName: String,
-                    newBaseVersion: String
+                groupName: String,
+                artifactName: String,
+                newBaseVersion: String
             ) {
                 //do nothing
             }
@@ -64,24 +64,24 @@ open class MigrateTask : DefaultTask() {
     }
 
     private fun migrateNow(
-            classEntries: MutableList<ClassMigrationEntry>,
-            packageEntries: MutableList<ClassMigrationEntry>,
-            gradleDependencyEntries: MutableList<GradleDependencyMigrationEntry>
+        classEntries: MutableList<ClassMigrationEntry>,
+        packageEntries: MutableList<ClassMigrationEntry>,
+        gradleDependencyEntries: MutableList<GradleDependencyMigrationEntry>
     ) {
 
 
         var walk = project.rootDir.walk()
         walk.filter { !isBuildDir(it) }
-                .filter { it.isFile }
-                .filter { !it.isHidden }
-                .filter { it.extension == "xml" || it.extension == "java" || it.extension == "kt" || it.extension == "gradle" }
-                .forEach {
-                    if (it.extension == "gradle") {
-                        migrateDSL(it, gradleDependencyEntries)
-                    } else {
-                        migrateSource(it, classEntries, packageEntries)
-                    }
+            .filter { it.isFile }
+            .filter { !it.isHidden }
+            .filter { it.extension == "xml" || it.extension == "java" || it.extension == "kt" || it.extension == "gradle" }
+            .forEach {
+                if (it.extension == "gradle") {
+                    migrateDSL(it, gradleDependencyEntries)
+                } else {
+                    migrateSource(it, classEntries, packageEntries)
                 }
+            }
 
 
     }
@@ -96,7 +96,10 @@ open class MigrateTask : DefaultTask() {
         return false
     }
 
-    private fun migrateDSL(gradle: File, gradleDependencyEntries: MutableList<GradleDependencyMigrationEntry>) {
+    private fun migrateDSL(
+        gradle: File,
+        gradleDependencyEntries: MutableList<GradleDependencyMigrationEntry>
+    ) {
 
         var text = gradle.readText()
 
@@ -108,10 +111,15 @@ open class MigrateTask : DefaultTask() {
                 if (it.contains("${entry.oldGroupName}:${entry.oldArtifactName}")) {
 
                     var newValue = it.replace(
-                            "${entry.oldGroupName}:${entry.oldArtifactName}",
-                            "${entry.newGroupName}:${entry.newArtifactName}"
+                        "${entry.oldGroupName}:${entry.oldArtifactName}",
+                        "${entry.newGroupName}:${entry.newArtifactName}"
                     )
-                    newValue = newValue.replaceAfterLast(":", "${entry.newBaseVersion}\"").replace("'", "\"")
+                    newValue = newValue.replaceAfterLast(":", "${entry.newBaseVersion}\"")
+                        .replace("'", "\"")
+
+                    if (it.contains(")")) {
+                        newValue = newValue.plus(")")
+                    }
                     text = text.replace(it, newValue)
                     rewrite = true
                 }
@@ -122,7 +130,11 @@ open class MigrateTask : DefaultTask() {
         }
     }
 
-    private fun migrateSource(it: File, classEntries: MutableList<ClassMigrationEntry>, packageEntries: MutableList<ClassMigrationEntry>) {
+    private fun migrateSource(
+        it: File,
+        classEntries: MutableList<ClassMigrationEntry>,
+        packageEntries: MutableList<ClassMigrationEntry>
+    ) {
         var text = it.readText()
         var rewrite = false
 

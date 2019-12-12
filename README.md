@@ -19,7 +19,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath "com.github.emile2013:easyandroidx:$easyandroidx_version" //add this line
+        classpath "com.github.emile2013:EasyMigrateAndroidX:$easyandroidx_version" //add this line
     }
 }
 
@@ -37,7 +37,7 @@ allprojects {
 
 ```groovy
 apply plugin: 'com.android.application'
-apply plugin: 'com.github.emile2013.EasyMigrateAndroidX' // add this line
+apply plugin: 'com.github.emile2013.migrateandroidx' // add this line
 ```
 tips: 这里只要在一个子项目中审明就行，无需多项目均增加！！
 
