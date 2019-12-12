@@ -55,7 +55,7 @@ apply plugin: 'com.github.emile2013.migrateandroidx' // add this line
 
 ## Tips
  
- 此项目原理是解析migrate.xml文件(来自AS源码)，遍历所有项目中的类文件、资源文件以及gradle文件，并进行内容替换，能加快像Repo或多项目迁移速度；
+ 此项目原理是解析migrate.xml文件(来自AS源码)，遍历所有项目中的类文件、资源文件以及gradle文件，并进行内容替换，能加快像repo管理或多项目迁移速度；
 
 ## Reference
 - [adt-tools-base](http://git.jetbrains.org/?p=idea/adt-tools-base.git;a=tree)
