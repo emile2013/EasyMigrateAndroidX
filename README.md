@@ -58,6 +58,12 @@ tips: 这里只要在一个子项目中审明就行，无需多项目均增加�
  
  此项目原理是解析migrate.xml文件(来自AS源码)，遍历 `所有项目`(setting.gradle中include的所有项目)中的类文件、资源文件以及gradle文件，并进行内容替换，能加快像repo管理或多项目迁移速度；
 
+- 不支持单行审明末尾加注释，如以下所示
+```aidl
+    implementation("com.android.support:support-annotations:${rootProject.ext.google.support}"){ //do not add this comment
+    }
+```
+
 ## Reference
 - [adt-tools-base](http://git.jetbrains.org/?p=idea/adt-tools-base.git;a=tree)
 
