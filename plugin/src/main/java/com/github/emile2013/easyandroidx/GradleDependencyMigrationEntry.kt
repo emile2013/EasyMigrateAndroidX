@@ -26,7 +26,7 @@ class GradleDependencyMigrationEntry {
         newArtifactName: String,
         newBaseVersion: String
     ) {
-        this.oldGroupName = oldGroupName;
+        this.oldGroupName = oldGroupName
         this.oldArtifactName = oldArtifactName
         this.newGroupName = newGroupName
         this.newArtifactName = newArtifactName

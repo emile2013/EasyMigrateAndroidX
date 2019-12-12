@@ -364,7 +364,8 @@
   <!-- Support Library Gradle Artifacts -->
   <migrate-dependency old-group-name="com.android.support" old-artifact-name="animated-vector-drawable" new-group-name="androidx.vectordrawable" new-artifact-name="vectordrawable-animated" base-version="1.0.0"/>
   <migrate-dependency old-group-name="com.android.support" old-artifact-name="appcompat-v7" new-group-name="androidx.appcompat" new-artifact-name="appcompat" base-version="1.0.0"/>
-  <migrate-dependency old-group-name="com.android.support" old-artifact-name="car" new-group-name="androidx.car" new-artifact-name="car" base-version="1.0.0-alpha5"/>
+  <!-- rm car -->
+<!--  <migrate-dependency old-group-name="com.android.support" old-artifact-name="car" new-group-name="androidx.car" new-artifact-name="car" base-version="1.0.0-alpha5"/>-->
   <migrate-dependency old-group-name="com.android.support" old-artifact-name="cardview-v7" new-group-name="androidx.cardview" new-artifact-name="cardview" base-version="1.0.0"/>
   <migrate-dependency old-group-name="com.android.support" old-artifact-name="collections" new-group-name="androidx.collection" new-artifact-name="collection" base-version="1.0.0"/>
   <migrate-dependency old-group-name="com.android.support" old-artifact-name="customtabs" new-group-name="androidx.browser" new-artifact-name="browser" base-version="1.0.0"/>
