@@ -49,9 +49,9 @@ apply plugin: 'com.github.emile2013.EasyMigrateAndroidX' // add this line
 
 ###### Modify manually build.gradle [手动修改build.gradle]
 
->考虑到androidx版本一直变更，此项目没有把androidX依赖版本替换，所以需要手动修改build.gradle文件中相应依赖版本号，以及可能要增加未审明的依赖，相应依赖可参考[artifact-mappings](https://developer.android.com/jetpack/androidx/migrate/artifact-mappings)
+> 有场景需要手动再次修改build.gradle依赖，例如原来是传递依赖，不是一级审明，这时需要手动主动添加相应依赖，可能要增加未审明的依赖和版本可参考[artifact-mappings](https://developer.android.com/jetpack/androidx/migrate/artifact-mappings)
 
->This Repository just replace dependency groupName and artifactName without version, so after running, modify the [newest](https://developer.android.com/jetpack/androidx/migrate/artifact-mappings) version for androidX 
+> You maybe need to add not declare dependency in build.gradle , so after running, modify the [newest](https://developer.android.com/jetpack/androidx/migrate/artifact-mappings) artifact-mappings for androidX
 
 ## Tips
  

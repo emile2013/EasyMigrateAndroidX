@@ -5,7 +5,6 @@ import org.gradle.api.tasks.TaskAction
 import java.io.File
 
 
-
 /**
  *
  * Migrate androidX Task
@@ -74,6 +73,7 @@ open class MigrateTask : DefaultTask() {
         var walk = project.rootDir.walk()
         walk.filter { !isBuildDir(it) }
                 .filter { it.isFile }
+                .filter { !it.isHidden }
                 .filter { it.extension == "xml" || it.extension == "java" || it.extension == "kt" || it.extension == "gradle" }
                 .forEach {
                     if (it.extension == "gradle") {
@@ -99,14 +99,22 @@ open class MigrateTask : DefaultTask() {
     private fun migrateDSL(gradle: File, gradleDependencyEntries: MutableList<GradleDependencyMigrationEntry>) {
 
         var text = gradle.readText()
+
         var rewrite = false
-        for (entry in gradleDependencyEntries) {
-            if (text.matches(Regex("${entry.oldGroupName}:${entry.oldArtifactName}"))) {
-                text = text.replace(
-                        "${entry.oldGroupName}:${entry.oldArtifactName}",
-                        "${entry.newGroupName}:${entry.newArtifactName}"
-                )
-                rewrite = true
+        gradle.forEachLine {
+
+            for (entry in gradleDependencyEntries) {
+
+                if (it.contains("${entry.oldGroupName}:${entry.oldArtifactName}")) {
+
+                    var newValue = it.replace(
+                            "${entry.oldGroupName}:${entry.oldArtifactName}",
+                            "${entry.newGroupName}:${entry.newArtifactName}"
+                    )
+                    newValue = newValue.replaceAfterLast(":", "${entry.newBaseVersion}\"").replace("'", "\"")
+                    text = text.replace(it, newValue)
+                    rewrite = true
+                }
             }
         }
         if (rewrite) {
