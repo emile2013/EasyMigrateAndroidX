@@ -37,7 +37,7 @@ allprojects {
 
 ```groovy
 apply plugin: 'com.android.application'
-apply plugin: 'com.github.emile2013.migrateandroidx' // add this line
+apply plugin: 'com.github.emile2013.EasyMigrateAndroidX' // add this line
 ```
 
 ###### Run task

@@ -502,4 +502,25 @@
   <migrate-dependency old-group-name="com.android.support.design.dialog" old-artifact-name="design-dialog" new-group-name="com.google.android.material.dialog" new-artifact-name="material-dialog" base-version="1.0.0"/>
   <migrate-dependency old-group-name="com.android.support.design.drawable" old-artifact-name="design-drawable" new-group-name="com.google.android.material.drawable" new-artifact-name="material-drawable" base-version="1.0.0"/>
   <migrate-dependency old-group-name="com.android.support.design.expandable" old-artifact-name="design-expandable" new-group-name="com.google.android.material.expandable" new-artifact-name="material-expandable" base-version="1.0.0"/>
-  <migrate-dependency old-group-name="com.android.support.design.floatingactionbutton" old-artifact-name="design-floatingactionbutton" new-group-name="com.google.android.material.floatingactionbutton" new-artifact-name="material-float
+  <migrate-dependency old-group-name="com.android.support.design.floatingactionbutton" old-artifact-name="design-floatingactionbutton" new-group-name="com.google.android.material.floatingactionbutton" new-artifact-name="material-floatingactionbutton" base-version="1.0.0"/>
+  <migrate-dependency old-group-name="com.android.support.design.internal" old-artifact-name="design-internal" new-group-name="com.google.android.material.internal" new-artifact-name="material-internal" base-version="1.0.0"/>
+  <migrate-dependency old-group-name="com.android.support.design.math" old-artifact-name="design-math" new-group-name="com.google.android.material.math" new-artifact-name="material-math" base-version="1.0.0"/>
+  <migrate-dependency old-group-name="com.android.support.design.navigation" old-artifact-name="design-navigation" new-group-name="com.google.android.material.navigation" new-artifact-name="material-navigation" base-version="1.0.0"/>
+  <migrate-dependency old-group-name="com.android.support.design.resources" old-artifact-name="design-resources" new-group-name="com.google.android.material.resources" new-artifact-name="material-resources" base-version="1.0.0"/>
+  <migrate-dependency old-group-name="com.android.support.design.ripple" old-artifact-name="design-ripple" new-group-name="com.google.android.material.ripple" new-artifact-name="material-ripple" base-version="1.0.0"/>
+  <migrate-dependency old-group-name="com.android.support.design.snackbar" old-artifact-name="design-shape" new-group-name="com.google.android.material.snackbar" new-artifact-name="material-shape" base-version="1.0.0"/>
+  <migrate-dependency old-group-name="com.android.support.design.stateful" old-artifact-name="design-snackbar" new-group-name="com.google.android.material.stateful" new-artifact-name="material-snackbar" base-version="1.0.0"/>
+  <migrate-dependency old-group-name="com.android.support.design.shape" old-artifact-name="design-stateful" new-group-name="com.google.android.material.shape" new-artifact-name="material-stateful" base-version="1.0.0"/>
+  <migrate-dependency old-group-name="com.android.support.design.tabs" old-artifact-name="design-tabs" new-group-name="com.google.android.material.tabs" new-artifact-name="material-tabs" base-version="1.0.0"/>
+  <migrate-dependency old-group-name="com.android.support.design.textfield" old-artifact-name="design-textfield" new-group-name="com.google.android.material.textfield" new-artifact-name="material-textfield" base-version="1.0.0"/>
+  <migrate-dependency old-group-name="com.android.support.design.theme" old-artifact-name="design-theme" new-group-name="com.google.android.material.theme" new-artifact-name="material-theme" base-version="1.0.0"/>
+  <migrate-dependency old-group-name="com.android.support.design.transformation" old-artifact-name="design-transformation" new-group-name="com.google.android.material.transformation" new-artifact-name="material-transformation" base-version="1.0.0"/>
+  <migrate-dependency old-group-name="com.android.support.design.typography" old-artifact-name="design-typography" new-group-name="com.google.android.material.typography" new-artifact-name="material-typography" base-version="1.0.0"/>
+  <migrate-dependency old-group-name="com.android.support.design.widget" old-artifact-name="design-widget" new-group-name="com.google.android.material.widget" new-artifact-name="material-widget" base-version="1.0.0"/>
+  <!-- Exoplayer -->
+  <migrate-dependency old-group-name="com.android.support" old-artifact-name="media2" new-group-name="androidx.media2" new-artifact-name="media2" base-version="1.0.0-alpha03"/>
+  <migrate-dependency old-group-name="com.android.support" old-artifact-name="media2-exoplayer" new-group-name="androidx.media2" new-artifact-name="media2-exoplayer" base-version="1.0.0-alpha01"/>
+
+  <upgrade-dependency group-name="androidx.core" artifact-name="core-ktx" base-version="1.0.0" />
+</migration-map>
+
