@@ -120,8 +120,8 @@ open class MigrateTask : DefaultTask() {
                     if (it.contains(")")) {
                         newValue = newValue.plus(")")
                     }
-                    if (it.contains("}")) {
-                        newValue = newValue.plus("}")
+                    if (it.contains("{")) {
+                        newValue = newValue.plus("{")
                     }
                     text = text.replace(it, newValue)
                     rewrite = true
