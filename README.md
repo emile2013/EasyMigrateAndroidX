@@ -1,6 +1,7 @@
 # EasyMigrateAndroidX
 [![license](http://img.shields.io/badge/license-BSD3-brightgreen.svg?style=flat)](https://github.com/emile2013/EasyMigrateAndroidX/tree/master/LICENSE)
-[![Release Version](https://jitpack.io/v/emile2013/ResMonitor.svg)](https://jitpack.io/#emile2013/ResMonitor)
+[![Release Version](https://jitpack.io/v/emile2013/EasyMigrateAndroidX.svg)](https://jitpack.io/#emile2013/EasyMigrateAndroidX)
+
 
 Help Android Program Migrate To AndroidX
 
