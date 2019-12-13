@@ -6,7 +6,7 @@
 
 > AS Migrate to Androidx 功能在多项目或大项目中迁移存在修改源码错乱以及效率问题，此项目能减少类似错误和提高迁移效率。
 
-[README English](README.md)
+[README English Version](README.md)
 ## 特征
 - 支持java,kt,xml源文件中support相关包名修正至androidX包；
 - 支持gradle文件中support依赖替换成相应的androidX依赖；
