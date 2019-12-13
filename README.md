@@ -50,9 +50,9 @@ tips: 这里只要在一个子项目中审明就行，无需多项目均增加�
 
 ###### Modify manually build.gradle [手动修改build.gradle]
 
-> 有场景需要手动再次修改build.gradle依赖，例如原来是传递依赖，不是一级审明，这时需要手动主动添加相应依赖，可能要增加未审明的依赖和版本可参考[artifact-mappings](https://developer.android.com/jetpack/androidx/migrate/artifact-mappings)
+> 有场景需要手动再次修改build.gradle依赖，例如原来是传递依赖，不是一级审明，这时可能需要手动主动添加相应依赖，可能要增加未审明的依赖和版本可参考[artifact-mappings](https://developer.android.com/jetpack/androidx/migrate/artifact-mappings)
 
-> You maybe need to add not declare dependency in build.gradle , so after running, modify the [newest](https://developer.android.com/jetpack/androidx/migrate/artifact-mappings) artifact-mappings for androidX
+> You maybe need to add not declare dependency in build.gradle , so after running, modify the [newest](https://developer.android.com/jetpack/androidx/migrate/artifact-mappings) artifact for androidX
 
 ## Tips
  
