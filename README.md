@@ -4,7 +4,14 @@
 
 Help Android Program Migrate To AndroidX
 
-> AS Migrate to Androidx 功能在多项目或大项目中迁移存在修改源码错乱以及效率问题，此项目能减少类似错误和提高迁移效率。
+> Android Studio `Migrate to Androidx` make lots of source file such as java content not exactly right, result project compile error. This repository can fast migrate to androidX,without such issue.
+
+## Features
+- support java,xml,kt extension file replace;
+- support gradle extension file replace;
+
+[README 中文版](README.zh-CN.md)
+
 ## Getting Started 
 
 ###### Edit root project build.gradle file, append plugin in  `buildscript`  classpath ，and do not forget add maven { url 'https://jitpack.io' } too.
@@ -39,7 +46,7 @@ allprojects {
 apply plugin: 'com.android.application'
 apply plugin: 'com.github.emile2013.migrateandroidx' // add this line
 ```
-tips: 这里只要在一个子项目中审明就行，无需多项目均增加！！
+tips: just  add in one child module , no need add in all projects
 
 ###### Run task
 
@@ -50,18 +57,19 @@ tips: 这里只要在一个子项目中审明就行，无需多项目均增加�
 
 ###### Modify manually build.gradle [手动修改build.gradle]
 
-> 有场景需要手动再次修改build.gradle依赖，例如原来是传递依赖，不是一级审明，这时可能需要手动主动添加相应依赖，可能要增加未审明的依赖和版本可参考[artifact-mappings](https://developer.android.com/jetpack/androidx/migrate/artifact-mappings)
-
 > You maybe need to add not declare dependency in build.gradle , so after running, modify the [newest](https://developer.android.com/jetpack/androidx/migrate/artifact-mappings) artifact for androidX
 
 ## Tips
  
- 此项目原理是解析migrate.xml文件(来自AS源码)，遍历 `所有项目`(setting.gradle中include的所有项目)中的类文件、资源文件以及gradle文件，并进行内容替换，能加快像repo管理或多项目迁移速度；
-
-- 不支持单行审明末尾加注释，如以下所示
+-  Repository do not support append comment in `dependency declare line` , such as  :
 ```aidl
     implementation("com.android.support:support-annotations:${rootProject.ext.google.support}"){ //do not add this comment
     }
+```
+- androidX Prerequisites such as gradle version 4.6+,AGP 3.2.0+, and both of them are set to true in your gradle.properties file:
+```
+android.useAndroidX=true
+android.enableJetifier=true
 ```
 
 ## Reference
