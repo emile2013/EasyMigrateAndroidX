@@ -19,7 +19,7 @@ Help Android Program Migrate To AndroidX
 
 ```groovy
 buildscript {
-    ext.easyandroidx_version='0.1.0'
+    ext.easyandroidx_version='0.1.1'
     repositories {
         maven { url 'https://jitpack.io' } //add this line
         google()
