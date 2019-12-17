@@ -4,7 +4,7 @@
 
 辅助Android项目迁移至androidX
 
-> AS Migrate to Androidx 功能在多项目或大项目中迁移存在修改源码错乱以及效率问题，此项目能减少类似错误和提高迁移效率。
+> AS Migrate to Androidx 功能在多项目或大项目中迁移存在修改源码错乱以及效率问题，此项目能杜绝类似错误和提高迁移效率。
 
 [README English Version](README.md)
 ## 特征
