@@ -5,7 +5,7 @@
 
 Help Android Program Migrate To AndroidX
 
-> Android Studio `Migrate to Androidx` make lots of source file such as java content not exactly right, result project compile error. This repository can fast migrate to androidX,without such issue.
+> Android Studio `Migrate to Androidx` make lots of source file not exactly right, result project compile error. With this repository can migrate to androidX quickly,without such issue.
 
 ## Features
 - support java,xml,kt extension file content replace;
