@@ -18,6 +18,7 @@
   <migrate old-name="android.support.design.bottomappbar.BottomAppBar" new-name="com.google.android.material.bottomappbar.BottomAppBar" type="CLASS"/>
   <migrate old-name="android.support.design.bottomappbar.BottomAppBarTopEdgeTreatment" new-name="com.google.android.material.bottomappbar.BottomAppBarTopEdgeTreatment" type="CLASS"/>
   <migrate old-name="android.support.design.bottomnavigation.LabelVisibilityMode" new-name="com.google.android.material.bottomnavigation.LabelVisibilityMode" type="CLASS"/>
+  <migrate old-name="android.support.design.animation.AnimationUtils" new-name="com.google.android.material.animation.AnimationUtils" type="CLASS"/>
   <migrate old-name="android.support.design.button.MaterialButton" new-name="com.google.android.material.button.MaterialButton" type="CLASS"/>
   <migrate old-name="android.support.design.card.MaterialCardView" new-name="com.google.android.material.card.MaterialCardView" type="CLASS"/>
   <migrate old-name="android.support.design.chip.Chip" new-name="com.google.android.material.chip.Chip" type="CLASS"/>
